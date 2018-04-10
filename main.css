@@ -23,3 +23,15 @@ body {
   width: 80%;
 }
 
+.screen {
+  background-color: #aef7fa88;
+  box-shadow: 1px 1px 1px #2d2e2e;
+  height: 15%;
+  width: 100%;
+}
+
+@media only screen and (max-width: 700px) {
+  .container {
+    width: 100vw;
+  }
+}
