@@ -15,11 +15,18 @@ $(document).ready(function() {
 
   $('.invert').on('click', calculator.invertClicked);
 
+  $('.decimal').on('click', calculator.decimalClicked);
+
+  $('.root').on('click', calculator.squareRootNumber);
+
+  $('.equal').on('click', calculator.calculate);
+
 });
 
 // Calculator Object
 function Calculator() {
   var numbers = [];
+  var total = '';
 
   /**
    * @method 
@@ -27,6 +34,7 @@ function Calculator() {
    */
   this.clear = function() {
     numbers = [];
+    total = '';
     $('.current-number').text('0');
     $('.staged-calculation').text('');
   }
@@ -104,21 +112,20 @@ function Calculator() {
    * Calculates all current numbers and operators and then returns the square root of the number.
    */
   this.squareRootNumber = function() {
-
+    console.log('finding square root...');
   }
-
   /**
    * Calculates all current numbers and operators and then returns the number.
    */
   this.calculate = function() {
-
+    console.log('calculating...');
   }
 
   /**
    * Exits function is the current number already has a decimal point. If number does have a decimal point, function will add a decimal point to the number.
    */
   this.decimalClicked = function() {
-
+    console.log('adding decimal...');
   }
 
 }
