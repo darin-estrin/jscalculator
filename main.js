@@ -49,9 +49,12 @@ function Calculator() {
   this.numberClicked = function(number) {
     var currentIndex;
     numbers.length > 0 ? currentIndex = numbers.length : currentIndex = 0;
-    if (numbers[currentIndex] === undefined && +number === 0) {
+
+    if (number === '0' && isNaN(numbers[currentIndex-1])) {
       return;
-    } else if (!isNaN(numbers[currentIndex-1])) {
+    }
+    
+    if (!isNaN(numbers[currentIndex-1])) {
       numbers[currentIndex-1] += number;
       $('.current-number').text(numbers[currentIndex-1]);
     } else {
