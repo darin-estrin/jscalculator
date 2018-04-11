@@ -51,6 +51,11 @@ function Calculator() {
   this.numberClicked = function(number) {
     var currentIndex;
     numbers.length > 0 ? currentIndex = numbers.length : currentIndex = 0;
+    if (equalPressedLast) {
+      currentIndex = 0;
+      numbers = [];
+      equalPressedLast = false;
+    }
 
     if (number === '0' && isNaN(numbers[currentIndex-1])) {
       return;
@@ -121,17 +126,27 @@ function Calculator() {
    * Calculates all current numbers and operators and then returns the square root of the number.
    */
   this.squareRootNumber = function() {
-    console.log('finding square root...');
-    this.calculate();
-    var number = Math.sqrt(+total);
+    var number = null;
+
+    if (numbers.length > 2) {
+      this.calculate();
+      number = Math.sqrt(+total);
+    } else {
+      number = Math.sqrt(numbers[0]);
+      numbers[0] = number;
+    }
+
+    if (isNaN(number)) {
+      return;
+    }
     $('.current-number').text(number);
+    
   }.bind(this);
 
   /**
    * Calculates all current numbers and operators and then returns the number.
    */
   this.calculate = function() {
-    console.log('calculating...');
     if (numbers.length < 2) {
       return;
     } else if (numbers.length === 2) {
@@ -149,7 +164,6 @@ function Calculator() {
     numbers = numbers.slice(-3);
     numbers[0] = total;
     equalPressedLast = true;
-    console.log(numbers);
   }
 
   /**
