@@ -129,7 +129,15 @@ function Calculator() {
    * Exits function is the current number already has a decimal point. If number does have a decimal point, function will add a decimal point to the number.
    */
   this.decimalClicked = function() {
-    console.log('adding decimal...');
+    if (isNaN(numbers[numbers.length-1])) {
+      numbers.push('0.');
+    } else if (numbers[numbers.length-1].indexOf('.') > 0) {
+      return;
+    } else {
+      numbers[numbers.length-1] += '.';
+    }
+  
+    $('.current-number').text(numbers[numbers.length-1]);
   }
 
 }
