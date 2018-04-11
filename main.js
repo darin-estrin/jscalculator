@@ -36,6 +36,7 @@ function Calculator() {
   this.clear = function() {
     numbers = [];
     total = '';
+    equalPressedLast = false;
     $('.current-number').text('0');
     $('.staged-calculation').text('');
   }
