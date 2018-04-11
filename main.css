@@ -36,6 +36,7 @@ body {
 
 .staged-calculation {
   margin-top: 1%;
+  min-height: 18px;
   text-align: right;
 }
 
