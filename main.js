@@ -113,7 +113,11 @@ function Calculator() {
    */
   this.squareRootNumber = function() {
     console.log('finding square root...');
-  }
+    this.calculate();
+    var number = Math.sqrt(+total);
+    $('.current-number').text(number);
+  }.bind(this);
+
   /**
    * Calculates all current numbers and operators and then returns the number.
    */
