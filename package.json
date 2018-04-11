@@ -23,5 +23,13 @@
   "bugs": {
     "url": "https://github.com/darin-estrin/jscalculator/issues"
   },
-  "homepage": "https://github.com/darin-estrin/jscalculator#readme"
+  "homepage": "https://github.com/darin-estrin/jscalculator#readme",
+  "devDependencies": {
+    "autoprefixer": "^8.2.0",
+    "cssnano": "^3.10.0",
+    "grunt": "^1.0.2",
+    "grunt-contrib-uglify": "^3.3.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-postcss": "^0.9.0"
+  }
 }
