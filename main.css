@@ -89,16 +89,16 @@ button:hover {
   transition: ease .1s;
 }
 
-.operator {
+.operator, .equal {
   background-color: #eb5e5e;
   color: #ffffff;
 }
 
-.operator:hover {
+.operator:hover, .equal:hover {
   background-color: #db3232;
 }
 
-.operator:active {
+.operator:active, .equal:active {
   background-color: #ad0606;
   transform: translateY(1px); 
   transition: ease .1s;
