@@ -27,6 +27,7 @@ $(document).ready(function() {
 function Calculator() {
   var numbers = [];
   var total = '';
+  var equalPressedLast = false;
 
   /**
    * @method 
@@ -72,6 +73,10 @@ function Calculator() {
    */
   this.operatorClicked = function(operator) {
     var calculation = '';
+    if (equalPressedLast) {
+      numbers = [total];
+      equalPressedLast = false;
+    }
     if (numbers.length === 0) {
       return;
     }
@@ -126,6 +131,24 @@ function Calculator() {
    */
   this.calculate = function() {
     console.log('calculating...');
+    if (numbers.length < 2) {
+      return;
+    } else if (numbers.length === 2) {
+      numbers[2] = numbers[0];
+    }
+
+    if (isNaN(numbers[numbers.length-1]) && numbers.length >= 3) {
+      numbers.splice(numbers.length-1, 1);
+    }
+    
+    total = eval(numbers.join('')).toString();
+    $('.staged-calculation').text('');
+    $('.current-number').text(total);
+
+    numbers = numbers.slice(-3);
+    numbers[0] = total;
+    equalPressedLast = true;
+    console.log(numbers);
   }
 
   /**
