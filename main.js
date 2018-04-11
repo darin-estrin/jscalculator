@@ -13,6 +13,8 @@ $(document).ready(function() {
     calculator.operatorClicked(e.target.innerText);
   });
 
+  $('.invert').on('click', calculator.invertClicked);
+
 });
 
 // Calculator Object
@@ -89,7 +91,13 @@ function Calculator() {
    * Turns a positive number into a negative number, and a negative number into a positive number
    */
   this.invertClicked = function() {
-
+    if (isNaN(numbers[numbers.length-1])) {
+      return;
+    } else {
+      var number = (+numbers[numbers.length-1] * -1).toString();
+      numbers[numbers.length-1] = number;
+      $('.current-number').text(number);
+    }
   }
 
   /**
