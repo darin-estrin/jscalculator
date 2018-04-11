@@ -85,4 +85,32 @@ function Calculator() {
     $('.current-number').text('0');
   }
 
+  /**
+   * Turns a positive number into a negative number, and a negative number into a positive number
+   */
+  this.invertClicked = function() {
+
+  }
+
+  /**
+   * Calculates all current numbers and operators and then returns the square root of the number.
+   */
+  this.squareRootNumber = function() {
+
+  }
+
+  /**
+   * Calculates all current numbers and operators and then returns the number.
+   */
+  this.calculate = function() {
+
+  }
+
+  /**
+   * Exits function is the current number already has a decimal point. If number does have a decimal point, function will add a decimal point to the number.
+   */
+  this.decimalClicked = function() {
+
+  }
+
 }
